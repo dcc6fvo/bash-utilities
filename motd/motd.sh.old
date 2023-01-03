@@ -1,0 +1,18 @@
+#!/bin/bash
+# 
+#
+
+FILE="/home/suporte/motd"
+INSTDATE=$(date +%d/%m/%Y)
+HOSTNAME=$(hostname)
+OSRELEASE=$( cat /etc/issue | head -n 1 | sed 's/\\n//; s/\\l//'; )
+#IPADDRES=$(ifconfig eth0 | grep -o '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*' | head -1)
+#ETHERADD=$(ip a | grep -o -P '(?<=inet).*(?=brd)')
+IP=$(hostname -I)
+
+echo 'DATE: ' $INSTDATE
+echo 'HOSTNAME: ' $HOSTNAME
+echo 'OS: ' $OSRELEASE
+echo 'IP: '$IP
+
+
